@@ -2,13 +2,11 @@
     %}
     <h1 align="center">Notes</h1>
     <ul class="list-group list-group-flush" id="notes">
-      {% for note in user.notes %}
+      {% for note in nominees %}
       <li class="list-group-item">
-        {{ note.data }}
-        <button type="button" class="close" onClick="deleteNote( 1 )">
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
+        {{ note.candidate_name }}
+        
+          
       </li>
       {% endfor %}
     </ul>
