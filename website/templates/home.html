@@ -1,20 +1,23 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
     %}
-    <h1 align="center">Notes</h1>
+    <form action="/update-data" method="POST">
+      <h1 align="center">Welcome To Voting</h1>
     <ul class="list-group list-group-flush" id="notes">
       {% for note in nominees %}
       <li class="list-group-item">
-        {{ note.candidate_name }}
-        
-          
+        <input
+          type="radio"
+          class="form-control"
+          id="{{note.id}}"
+          name="options"
+          value="{{note.id}}"
+        >{{note.candidate_name}}</input>
       </li>
       {% endfor %}
     </ul>
-    <form method="POST">
-      <textarea name="note" id="note" class="form-control"></textarea>
       <br />
       <div align="center">
-        <button type="submit" class="btn btn-primary">Add Note</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>
     {% endblock %}
